@@ -28,4 +28,11 @@ int main() {
         arr[i] = menor;
     }
 
+cout << "El arreglo ordenado: " << endl;
+for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
+    }
+    cout << endl;
 
+    return 0;
+}
