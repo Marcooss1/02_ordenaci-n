@@ -1,12 +1,8 @@
-#includ#include <iostream>
+#include<iostream>
 using namespace std;
 
-void intercambiar(int &a, int &b) {
-    int aux = a;
-    a = b;
-    b = aux;
-}
-void Reduce(int A[], int inicio, int final) {
+void Reduce(int A[],int inicio,int final)
+ {
  int izq = inicio;
     int der = final;
     int pos = izq;   
@@ -21,8 +17,10 @@ void Reduce(int A[], int inicio, int final) {
         }
 
     if (pos != der) {
-            intercambiar(A[pos], A[der]);
-            pos = der;
+           int aux=A[pos];
+            A[pos]=A[der];
+            A[der]=aux;
+            pos=der;
 
         
             while (A[pos] >= A[izq] && pos != izq) {
@@ -30,8 +28,10 @@ void Reduce(int A[], int inicio, int final) {
             }
 
             if (pos != izq) {
-                intercambiar(A[pos], A[izq]);
-                pos = izq;
+               int aux2=A[pos];
+                A[pos]=A[izq];
+                A[izq]=aux2;
+                pos=izq;
                 cen = 1;
             }
         }
@@ -54,7 +54,7 @@ void QuickSort(int A[], int n) {
 
 int main() {
     int n;
-    cout << "Ingrese la cantidad de datos: ";
+    cout << "Ingrese la cantidad de elementos: ";
     cin >> n;
 
     int A[n];
@@ -67,7 +67,7 @@ int main() {
 
 QuickSort(A, n);
 
- 
+ 	cout<<endl;
     cout << "Arreglo ordenado: ";
     for (int i = 0; i < n; i++) {
         cout << A[i] << " ";
