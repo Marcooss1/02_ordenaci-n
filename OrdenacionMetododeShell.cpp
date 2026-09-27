@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void ShellSort(int A[];int n){
+void ShellSort(int A[],int n){
 	int k=n+1;
 	
 	while(k>1){
@@ -10,7 +10,7 @@ void ShellSort(int A[];int n){
 			int aux=A[i];
 			int j=i;
 			
-			while(j-k>=1&&A[j-k]>aux){
+			while(j-k>=1 && A[j-k]>aux){
 				A[j]=A[j-k];
 				j=j-k;
 			}
@@ -22,10 +22,19 @@ int main(){
 	int n;
 	cout<<"Ingrese la cantidad de elementos: ";
 	cin>>n;
-	int A[n];
-	for(int i=0;i<n;i++){
+	
+	int A[n+1];
+	
+	for(int i=1;i<=n;i++){
 		cout<<"Elemento "<<i+1<< " es: ";
 		cin>>A[i];
 	}
+	cout<<endl;
+	 ShellSort(A,n);
+	cout<<"Ordenacion por metodo de Shellsort: ";
+	for(int i=1;i<=n;i++){
+		cout<<A[i]<<" ";
+	}
+	return 0;
 }
-}
+
